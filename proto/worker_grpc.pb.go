@@ -19,13 +19,13 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	Worker_Generate_FullMethodName    = "/worker.Worker/Generate"
-	Worker_Tags_FullMethodName        = "/worker.Worker/Tags"
-	Worker_Show_FullMethodName        = "/worker.Worker/Show"
-	Worker_Pull_FullMethodName        = "/worker.Worker/Pull"
-	Worker_Create_FullMethodName      = "/worker.Worker/Create"
-	Worker_Delete_FullMethodName      = "/worker.Worker/Delete"
-	Worker_HealthCheck_FullMethodName = "/worker.Worker/HealthCheck"
+	Worker_Generate_FullMethodName    = "/proto.Worker/Generate"
+	Worker_Tags_FullMethodName        = "/proto.Worker/Tags"
+	Worker_Show_FullMethodName        = "/proto.Worker/Show"
+	Worker_Pull_FullMethodName        = "/proto.Worker/Pull"
+	Worker_Create_FullMethodName      = "/proto.Worker/Create"
+	Worker_Delete_FullMethodName      = "/proto.Worker/Delete"
+	Worker_HealthCheck_FullMethodName = "/proto.Worker/HealthCheck"
 )
 
 // WorkerClient is the client API for Worker service.
@@ -312,7 +312,7 @@ func _Worker_HealthCheck_Handler(srv interface{}, ctx context.Context, dec func(
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Worker_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "worker.Worker",
+	ServiceName: "proto.Worker",
 	HandlerType: (*WorkerServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

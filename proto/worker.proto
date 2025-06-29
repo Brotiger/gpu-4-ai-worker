@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package worker;
+package proto;
 
 option go_package = "github.com/Brotiger/gpu-4-ai-worker/proto";
 
