@@ -716,7 +716,7 @@ const file_proto_worker_proto_rawDesc = "" +
 	"\x04Pull\x12\x12.proto.PullRequest\x1a\x13.proto.PullResponse\x125\n" +
 	"\x06Create\x12\x14.proto.CreateRequest\x1a\x15.proto.CreateResponse\x125\n" +
 	"\x06Delete\x12\x14.proto.DeleteRequest\x1a\x15.proto.DeleteResponse\x12:\n" +
-	"\vHealthCheck\x12\x14.proto.HealthRequest\x1a\x15.proto.HealthResponseB+Z)github.com/Brotiger/gpu-4-ai-worker/protob\x06proto3"
+	"\vHealthCheck\x12\x14.proto.HealthRequest\x1a\x15.proto.HealthResponseB\tZ\a.;protob\x06proto3"
 
 var (
 	file_proto_worker_proto_rawDescOnce sync.Once
