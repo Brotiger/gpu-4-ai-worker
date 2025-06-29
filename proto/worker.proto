@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package worker;
+
+option go_package = "github.com/Brotiger/gpu-4-ai-server/proto;workerpb";
+
+service Worker {
+  rpc ExecuteTask (TaskRequest) returns (TaskResponse);
+  rpc HealthCheck (HealthRequest) returns (HealthResponse);
+}
+
+message TaskRequest {
+  string input = 1;
+}
+
+message TaskResponse {
+  string output = 1;
+  string error = 2;
+}
+
+message HealthRequest {}
+message HealthResponse {
+  bool healthy = 1;
+  string details = 2;
+} 
