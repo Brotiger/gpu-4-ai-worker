@@ -32,6 +32,8 @@ func (s *OllamaService) Post(endpoint string, req any, resp any) error {
 	if err != nil {
 		return err
 	}
+
+	fmt.Println(httpResp)
 	defer httpResp.Body.Close()
 	return json.NewDecoder(httpResp.Body).Decode(resp)
 }
@@ -60,10 +62,18 @@ func (s *OllamaService) Tags() (*proto.TagsResponse, error) {
 	var ollamaResp struct {
 		Models []string `json:"models"`
 	}
-	err := s.Post("tags", nil, &ollamaResp)
+
+	ollamaURL := fmt.Sprintf("http://%s:%s/api/tags", s.Cfg.OllamaDomain, s.Cfg.OllamaPort)
+	httpResp, err := http.Get(ollamaURL)
 	if err != nil {
 		return nil, err
 	}
+
+	defer httpResp.Body.Close()
+	if err := json.NewDecoder(httpResp.Body).Decode(&ollamaResp); err != nil {
+		return nil, err
+	}
+
 	return &proto.TagsResponse{Models: ollamaResp.Models}, nil
 }
 

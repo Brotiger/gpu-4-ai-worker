@@ -1,9 +1,7 @@
-version: '3.8'
 services:
   ollama:
-    build:
-      context: ./docker/ollama
-    container_name: ollama
+    image: ollama/ollama:latest
+    container_name: gpu-4-ai-worker-ollama
     ports:
       - "11434:11434"
     restart: unless-stopped
