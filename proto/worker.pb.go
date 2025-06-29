@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        v3.21.12
-// source: worker.proto
+// source: proto/worker.proto
 
 package workerpb
 
@@ -30,7 +30,7 @@ type TaskRequest struct {
 
 func (x *TaskRequest) Reset() {
 	*x = TaskRequest{}
-	mi := &file_worker_proto_msgTypes[0]
+	mi := &file_proto_worker_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -42,7 +42,7 @@ func (x *TaskRequest) String() string {
 func (*TaskRequest) ProtoMessage() {}
 
 func (x *TaskRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_worker_proto_msgTypes[0]
+	mi := &file_proto_worker_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -55,7 +55,7 @@ func (x *TaskRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TaskRequest.ProtoReflect.Descriptor instead.
 func (*TaskRequest) Descriptor() ([]byte, []int) {
-	return file_worker_proto_rawDescGZIP(), []int{0}
+	return file_proto_worker_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *TaskRequest) GetInput() string {
@@ -75,7 +75,7 @@ type TaskResponse struct {
 
 func (x *TaskResponse) Reset() {
 	*x = TaskResponse{}
-	mi := &file_worker_proto_msgTypes[1]
+	mi := &file_proto_worker_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -87,7 +87,7 @@ func (x *TaskResponse) String() string {
 func (*TaskResponse) ProtoMessage() {}
 
 func (x *TaskResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_worker_proto_msgTypes[1]
+	mi := &file_proto_worker_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -100,7 +100,7 @@ func (x *TaskResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use TaskResponse.ProtoReflect.Descriptor instead.
 func (*TaskResponse) Descriptor() ([]byte, []int) {
-	return file_worker_proto_rawDescGZIP(), []int{1}
+	return file_proto_worker_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *TaskResponse) GetOutput() string {
@@ -125,7 +125,7 @@ type HealthRequest struct {
 
 func (x *HealthRequest) Reset() {
 	*x = HealthRequest{}
-	mi := &file_worker_proto_msgTypes[2]
+	mi := &file_proto_worker_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -137,7 +137,7 @@ func (x *HealthRequest) String() string {
 func (*HealthRequest) ProtoMessage() {}
 
 func (x *HealthRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_worker_proto_msgTypes[2]
+	mi := &file_proto_worker_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -150,7 +150,7 @@ func (x *HealthRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HealthRequest.ProtoReflect.Descriptor instead.
 func (*HealthRequest) Descriptor() ([]byte, []int) {
-	return file_worker_proto_rawDescGZIP(), []int{2}
+	return file_proto_worker_proto_rawDescGZIP(), []int{2}
 }
 
 type HealthResponse struct {
@@ -163,7 +163,7 @@ type HealthResponse struct {
 
 func (x *HealthResponse) Reset() {
 	*x = HealthResponse{}
-	mi := &file_worker_proto_msgTypes[3]
+	mi := &file_proto_worker_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -175,7 +175,7 @@ func (x *HealthResponse) String() string {
 func (*HealthResponse) ProtoMessage() {}
 
 func (x *HealthResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_worker_proto_msgTypes[3]
+	mi := &file_proto_worker_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -188,7 +188,7 @@ func (x *HealthResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HealthResponse.ProtoReflect.Descriptor instead.
 func (*HealthResponse) Descriptor() ([]byte, []int) {
-	return file_worker_proto_rawDescGZIP(), []int{3}
+	return file_proto_worker_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *HealthResponse) GetHealthy() bool {
@@ -205,11 +205,11 @@ func (x *HealthResponse) GetDetails() string {
 	return ""
 }
 
-var File_worker_proto protoreflect.FileDescriptor
+var File_proto_worker_proto protoreflect.FileDescriptor
 
-const file_worker_proto_rawDesc = "" +
+const file_proto_worker_proto_rawDesc = "" +
 	"\n" +
-	"\fworker.proto\x12\x06worker\"#\n" +
+	"\x12proto/worker.proto\x12\x06worker\"#\n" +
 	"\vTaskRequest\x12\x14\n" +
 	"\x05input\x18\x01 \x01(\tR\x05input\"<\n" +
 	"\fTaskResponse\x12\x16\n" +
@@ -224,25 +224,25 @@ const file_worker_proto_rawDesc = "" +
 	"\vHealthCheck\x12\x15.worker.HealthRequest\x1a\x16.worker.HealthResponseB4Z2github.com/Brotiger/gpu-4-ai-server/proto;workerpbb\x06proto3"
 
 var (
-	file_worker_proto_rawDescOnce sync.Once
-	file_worker_proto_rawDescData []byte
+	file_proto_worker_proto_rawDescOnce sync.Once
+	file_proto_worker_proto_rawDescData []byte
 )
 
-func file_worker_proto_rawDescGZIP() []byte {
-	file_worker_proto_rawDescOnce.Do(func() {
-		file_worker_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_worker_proto_rawDesc), len(file_worker_proto_rawDesc)))
+func file_proto_worker_proto_rawDescGZIP() []byte {
+	file_proto_worker_proto_rawDescOnce.Do(func() {
+		file_proto_worker_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_worker_proto_rawDesc), len(file_proto_worker_proto_rawDesc)))
 	})
-	return file_worker_proto_rawDescData
+	return file_proto_worker_proto_rawDescData
 }
 
-var file_worker_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
-var file_worker_proto_goTypes = []any{
+var file_proto_worker_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_proto_worker_proto_goTypes = []any{
 	(*TaskRequest)(nil),    // 0: worker.TaskRequest
 	(*TaskResponse)(nil),   // 1: worker.TaskResponse
 	(*HealthRequest)(nil),  // 2: worker.HealthRequest
 	(*HealthResponse)(nil), // 3: worker.HealthResponse
 }
-var file_worker_proto_depIdxs = []int32{
+var file_proto_worker_proto_depIdxs = []int32{
 	0, // 0: worker.Worker.ExecuteTask:input_type -> worker.TaskRequest
 	2, // 1: worker.Worker.HealthCheck:input_type -> worker.HealthRequest
 	1, // 2: worker.Worker.ExecuteTask:output_type -> worker.TaskResponse
@@ -254,26 +254,26 @@ var file_worker_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_worker_proto_init() }
-func file_worker_proto_init() {
-	if File_worker_proto != nil {
+func init() { file_proto_worker_proto_init() }
+func file_proto_worker_proto_init() {
+	if File_proto_worker_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_worker_proto_rawDesc), len(file_worker_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_worker_proto_rawDesc), len(file_proto_worker_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_worker_proto_goTypes,
-		DependencyIndexes: file_worker_proto_depIdxs,
-		MessageInfos:      file_worker_proto_msgTypes,
+		GoTypes:           file_proto_worker_proto_goTypes,
+		DependencyIndexes: file_proto_worker_proto_depIdxs,
+		MessageInfos:      file_proto_worker_proto_msgTypes,
 	}.Build()
-	File_worker_proto = out.File
-	file_worker_proto_goTypes = nil
-	file_worker_proto_depIdxs = nil
+	File_proto_worker_proto = out.File
+	file_proto_worker_proto_goTypes = nil
+	file_proto_worker_proto_depIdxs = nil
 }
