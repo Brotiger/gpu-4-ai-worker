@@ -4,7 +4,7 @@
 // 	protoc        v3.21.12
 // source: proto/worker.proto
 
-package workerpb
+package proto
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -716,7 +716,7 @@ const file_proto_worker_proto_rawDesc = "" +
 	"\x04Pull\x12\x13.worker.PullRequest\x1a\x14.worker.PullResponse\x127\n" +
 	"\x06Create\x12\x15.worker.CreateRequest\x1a\x16.worker.CreateResponse\x127\n" +
 	"\x06Delete\x12\x15.worker.DeleteRequest\x1a\x16.worker.DeleteResponse\x12<\n" +
-	"\vHealthCheck\x12\x15.worker.HealthRequest\x1a\x16.worker.HealthResponseB4Z2github.com/Brotiger/gpu-4-ai-worker/proto;workerpbb\x06proto3"
+	"\vHealthCheck\x12\x15.worker.HealthRequest\x1a\x16.worker.HealthResponseB+Z)github.com/Brotiger/gpu-4-ai-worker/protob\x06proto3"
 
 var (
 	file_proto_worker_proto_rawDescOnce sync.Once

@@ -4,8 +4,9 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"net/http"
 	"gpu-4-ai-worker/internal/config"
+	"net/http"
+
 	"github.com/Brotiger/gpu-4-ai-worker/proto"
 )
 
@@ -113,4 +114,4 @@ func (s *OllamaService) Delete(req *proto.DeleteRequest) (*proto.DeleteResponse,
 		return nil, err
 	}
 	return &proto.DeleteResponse{Status: ollamaResp.Status}, nil
-} 
+}

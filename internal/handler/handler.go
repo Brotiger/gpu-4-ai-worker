@@ -1,14 +1,11 @@
 package handler
 
 import (
-	"bytes"
 	"context"
-	"encoding/json"
-	"fmt"
-	"net/http"
 
 	"gpu-4-ai-worker/internal/config"
 	"gpu-4-ai-worker/internal/service"
+
 	"github.com/Brotiger/gpu-4-ai-worker/proto"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
@@ -77,4 +74,4 @@ func (h *WorkerHandler) Delete(ctx context.Context, req *proto.DeleteRequest) (*
 
 func (h *WorkerHandler) HealthCheck(ctx context.Context, req *proto.HealthRequest) (*proto.HealthResponse, error) {
 	return &proto.HealthResponse{Healthy: true, Details: "OK"}, nil
-} 
+}
