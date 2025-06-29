@@ -4,7 +4,7 @@
 // 	protoc        v3.21.12
 // source: proto/worker.proto
 
-package proto
+package workerpb
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -673,7 +673,7 @@ var File_proto_worker_proto protoreflect.FileDescriptor
 
 const file_proto_worker_proto_rawDesc = "" +
 	"\n" +
-	"\x12proto/worker.proto\x12\x05proto\"W\n" +
+	"\x12proto/worker.proto\x12\x06worker\"W\n" +
 	"\x0fGenerateRequest\x12\x14\n" +
 	"\x05model\x18\x01 \x01(\tR\x05model\x12\x16\n" +
 	"\x06prompt\x18\x02 \x01(\tR\x06prompt\x12\x16\n" +
@@ -685,10 +685,10 @@ const file_proto_worker_proto_rawDesc = "" +
 	"\fTagsResponse\x12\x16\n" +
 	"\x06models\x18\x01 \x03(\tR\x06models\"#\n" +
 	"\vShowRequest\x12\x14\n" +
-	"\x05model\x18\x01 \x01(\tR\x05model\"\x9c\x01\n" +
+	"\x05model\x18\x01 \x01(\tR\x05model\"\x9d\x01\n" +
 	"\fShowResponse\x12\x14\n" +
-	"\x05model\x18\x01 \x01(\tR\x05model\x12:\n" +
-	"\adetails\x18\x02 \x03(\v2 .proto.ShowResponse.DetailsEntryR\adetails\x1a:\n" +
+	"\x05model\x18\x01 \x01(\tR\x05model\x12;\n" +
+	"\adetails\x18\x02 \x03(\v2!.worker.ShowResponse.DetailsEntryR\adetails\x1a:\n" +
 	"\fDetailsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"!\n" +
@@ -708,15 +708,15 @@ const file_proto_worker_proto_rawDesc = "" +
 	"\rHealthRequest\"D\n" +
 	"\x0eHealthResponse\x12\x18\n" +
 	"\ahealthy\x18\x01 \x01(\bR\ahealthy\x12\x18\n" +
-	"\adetails\x18\x02 \x01(\tR\adetails2\x82\x03\n" +
-	"\x06Worker\x12;\n" +
-	"\bGenerate\x12\x16.proto.GenerateRequest\x1a\x17.proto.GenerateResponse\x12/\n" +
-	"\x04Tags\x12\x12.proto.TagsRequest\x1a\x13.proto.TagsResponse\x12/\n" +
-	"\x04Show\x12\x12.proto.ShowRequest\x1a\x13.proto.ShowResponse\x12/\n" +
-	"\x04Pull\x12\x12.proto.PullRequest\x1a\x13.proto.PullResponse\x125\n" +
-	"\x06Create\x12\x14.proto.CreateRequest\x1a\x15.proto.CreateResponse\x125\n" +
-	"\x06Delete\x12\x14.proto.DeleteRequest\x1a\x15.proto.DeleteResponse\x12:\n" +
-	"\vHealthCheck\x12\x14.proto.HealthRequest\x1a\x15.proto.HealthResponseB+Z)github.com/Brotiger/gpu-4-ai-worker/protob\x06proto3"
+	"\adetails\x18\x02 \x01(\tR\adetails2\x90\x03\n" +
+	"\x06Worker\x12=\n" +
+	"\bGenerate\x12\x17.worker.GenerateRequest\x1a\x18.worker.GenerateResponse\x121\n" +
+	"\x04Tags\x12\x13.worker.TagsRequest\x1a\x14.worker.TagsResponse\x121\n" +
+	"\x04Show\x12\x13.worker.ShowRequest\x1a\x14.worker.ShowResponse\x121\n" +
+	"\x04Pull\x12\x13.worker.PullRequest\x1a\x14.worker.PullResponse\x127\n" +
+	"\x06Create\x12\x15.worker.CreateRequest\x1a\x16.worker.CreateResponse\x127\n" +
+	"\x06Delete\x12\x15.worker.DeleteRequest\x1a\x16.worker.DeleteResponse\x12<\n" +
+	"\vHealthCheck\x12\x15.worker.HealthRequest\x1a\x16.worker.HealthResponseB4Z2github.com/Brotiger/gpu-4-ai-worker/proto;workerpbb\x06proto3"
 
 var (
 	file_proto_worker_proto_rawDescOnce sync.Once
@@ -732,38 +732,38 @@ func file_proto_worker_proto_rawDescGZIP() []byte {
 
 var file_proto_worker_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
 var file_proto_worker_proto_goTypes = []any{
-	(*GenerateRequest)(nil),  // 0: proto.GenerateRequest
-	(*GenerateResponse)(nil), // 1: proto.GenerateResponse
-	(*TagsRequest)(nil),      // 2: proto.TagsRequest
-	(*TagsResponse)(nil),     // 3: proto.TagsResponse
-	(*ShowRequest)(nil),      // 4: proto.ShowRequest
-	(*ShowResponse)(nil),     // 5: proto.ShowResponse
-	(*PullRequest)(nil),      // 6: proto.PullRequest
-	(*PullResponse)(nil),     // 7: proto.PullResponse
-	(*CreateRequest)(nil),    // 8: proto.CreateRequest
-	(*CreateResponse)(nil),   // 9: proto.CreateResponse
-	(*DeleteRequest)(nil),    // 10: proto.DeleteRequest
-	(*DeleteResponse)(nil),   // 11: proto.DeleteResponse
-	(*HealthRequest)(nil),    // 12: proto.HealthRequest
-	(*HealthResponse)(nil),   // 13: proto.HealthResponse
-	nil,                      // 14: proto.ShowResponse.DetailsEntry
+	(*GenerateRequest)(nil),  // 0: worker.GenerateRequest
+	(*GenerateResponse)(nil), // 1: worker.GenerateResponse
+	(*TagsRequest)(nil),      // 2: worker.TagsRequest
+	(*TagsResponse)(nil),     // 3: worker.TagsResponse
+	(*ShowRequest)(nil),      // 4: worker.ShowRequest
+	(*ShowResponse)(nil),     // 5: worker.ShowResponse
+	(*PullRequest)(nil),      // 6: worker.PullRequest
+	(*PullResponse)(nil),     // 7: worker.PullResponse
+	(*CreateRequest)(nil),    // 8: worker.CreateRequest
+	(*CreateResponse)(nil),   // 9: worker.CreateResponse
+	(*DeleteRequest)(nil),    // 10: worker.DeleteRequest
+	(*DeleteResponse)(nil),   // 11: worker.DeleteResponse
+	(*HealthRequest)(nil),    // 12: worker.HealthRequest
+	(*HealthResponse)(nil),   // 13: worker.HealthResponse
+	nil,                      // 14: worker.ShowResponse.DetailsEntry
 }
 var file_proto_worker_proto_depIdxs = []int32{
-	14, // 0: proto.ShowResponse.details:type_name -> proto.ShowResponse.DetailsEntry
-	0,  // 1: proto.Worker.Generate:input_type -> proto.GenerateRequest
-	2,  // 2: proto.Worker.Tags:input_type -> proto.TagsRequest
-	4,  // 3: proto.Worker.Show:input_type -> proto.ShowRequest
-	6,  // 4: proto.Worker.Pull:input_type -> proto.PullRequest
-	8,  // 5: proto.Worker.Create:input_type -> proto.CreateRequest
-	10, // 6: proto.Worker.Delete:input_type -> proto.DeleteRequest
-	12, // 7: proto.Worker.HealthCheck:input_type -> proto.HealthRequest
-	1,  // 8: proto.Worker.Generate:output_type -> proto.GenerateResponse
-	3,  // 9: proto.Worker.Tags:output_type -> proto.TagsResponse
-	5,  // 10: proto.Worker.Show:output_type -> proto.ShowResponse
-	7,  // 11: proto.Worker.Pull:output_type -> proto.PullResponse
-	9,  // 12: proto.Worker.Create:output_type -> proto.CreateResponse
-	11, // 13: proto.Worker.Delete:output_type -> proto.DeleteResponse
-	13, // 14: proto.Worker.HealthCheck:output_type -> proto.HealthResponse
+	14, // 0: worker.ShowResponse.details:type_name -> worker.ShowResponse.DetailsEntry
+	0,  // 1: worker.Worker.Generate:input_type -> worker.GenerateRequest
+	2,  // 2: worker.Worker.Tags:input_type -> worker.TagsRequest
+	4,  // 3: worker.Worker.Show:input_type -> worker.ShowRequest
+	6,  // 4: worker.Worker.Pull:input_type -> worker.PullRequest
+	8,  // 5: worker.Worker.Create:input_type -> worker.CreateRequest
+	10, // 6: worker.Worker.Delete:input_type -> worker.DeleteRequest
+	12, // 7: worker.Worker.HealthCheck:input_type -> worker.HealthRequest
+	1,  // 8: worker.Worker.Generate:output_type -> worker.GenerateResponse
+	3,  // 9: worker.Worker.Tags:output_type -> worker.TagsResponse
+	5,  // 10: worker.Worker.Show:output_type -> worker.ShowResponse
+	7,  // 11: worker.Worker.Pull:output_type -> worker.PullResponse
+	9,  // 12: worker.Worker.Create:output_type -> worker.CreateResponse
+	11, // 13: worker.Worker.Delete:output_type -> worker.DeleteResponse
+	13, // 14: worker.Worker.HealthCheck:output_type -> worker.HealthResponse
 	8,  // [8:15] is the sub-list for method output_type
 	1,  // [1:8] is the sub-list for method input_type
 	1,  // [1:1] is the sub-list for extension type_name

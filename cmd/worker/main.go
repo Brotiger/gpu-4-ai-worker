@@ -7,7 +7,7 @@ import (
 	"gpu-4-ai-worker/internal/config"
 	"gpu-4-ai-worker/internal/handler"
 
-	"github.com/Brotiger/gpu-4-ai-worker/proto"
+	workerpb "github.com/Brotiger/gpu-4-ai-worker/proto"
 	"google.golang.org/grpc"
 )
 
@@ -19,7 +19,7 @@ func main() {
 	}
 
 	grpcServer := grpc.NewServer()
-	proto.RegisterWorkerServer(grpcServer, handler.NewWorkerHandler(cfg))
+	workerpb.RegisterWorkerServer(grpcServer, handler.NewWorkerHandler(cfg))
 	log.Println("gRPC server listening on", cfg.GRPCAddr)
 
 	if err := grpcServer.Serve(lis); err != nil {

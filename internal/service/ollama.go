@@ -7,7 +7,7 @@ import (
 	"gpu-4-ai-worker/internal/config"
 	"net/http"
 
-	"github.com/Brotiger/gpu-4-ai-worker/proto"
+	workerpb "github.com/Brotiger/gpu-4-ai-worker/proto"
 )
 
 type OllamaService struct {
@@ -36,7 +36,7 @@ func (s *OllamaService) Post(endpoint string, req any, resp any) error {
 	return json.NewDecoder(httpResp.Body).Decode(resp)
 }
 
-func (s *OllamaService) Generate(req *proto.GenerateRequest) (*proto.GenerateResponse, error) {
+func (s *OllamaService) Generate(req *workerpb.GenerateRequest) (*workerpb.GenerateResponse, error) {
 	ollamaReq := map[string]interface{}{
 		"model":  req.Model,
 		"prompt": req.Prompt,
@@ -50,13 +50,13 @@ func (s *OllamaService) Generate(req *proto.GenerateRequest) (*proto.GenerateRes
 	if err != nil {
 		return nil, err
 	}
-	return &proto.GenerateResponse{
+	return &workerpb.GenerateResponse{
 		Response: ollamaResp.Response,
 		Done:     ollamaResp.Done,
 	}, nil
 }
 
-func (s *OllamaService) Tags() (*proto.TagsResponse, error) {
+func (s *OllamaService) Tags() (*workerpb.TagsResponse, error) {
 	var ollamaResp struct {
 		Models []string `json:"models"`
 	}
@@ -64,10 +64,10 @@ func (s *OllamaService) Tags() (*proto.TagsResponse, error) {
 	if err != nil {
 		return nil, err
 	}
-	return &proto.TagsResponse{Models: ollamaResp.Models}, nil
+	return &workerpb.TagsResponse{Models: ollamaResp.Models}, nil
 }
 
-func (s *OllamaService) Show(req *proto.ShowRequest) (*proto.ShowResponse, error) {
+func (s *OllamaService) Show(req *workerpb.ShowRequest) (*workerpb.ShowResponse, error) {
 	ollamaReq := map[string]interface{}{"model": req.Model}
 	var ollamaResp struct {
 		Model   string            `json:"model"`
@@ -77,10 +77,10 @@ func (s *OllamaService) Show(req *proto.ShowRequest) (*proto.ShowResponse, error
 	if err != nil {
 		return nil, err
 	}
-	return &proto.ShowResponse{Model: ollamaResp.Model, Details: ollamaResp.Details}, nil
+	return &workerpb.ShowResponse{Model: ollamaResp.Model, Details: ollamaResp.Details}, nil
 }
 
-func (s *OllamaService) Pull(req *proto.PullRequest) (*proto.PullResponse, error) {
+func (s *OllamaService) Pull(req *workerpb.PullRequest) (*workerpb.PullResponse, error) {
 	ollamaReq := map[string]interface{}{"name": req.Name}
 	var ollamaResp struct {
 		Status string `json:"status"`
@@ -89,10 +89,10 @@ func (s *OllamaService) Pull(req *proto.PullRequest) (*proto.PullResponse, error
 	if err != nil {
 		return nil, err
 	}
-	return &proto.PullResponse{Status: ollamaResp.Status}, nil
+	return &workerpb.PullResponse{Status: ollamaResp.Status}, nil
 }
 
-func (s *OllamaService) Create(req *proto.CreateRequest) (*proto.CreateResponse, error) {
+func (s *OllamaService) Create(req *workerpb.CreateRequest) (*workerpb.CreateResponse, error) {
 	ollamaReq := map[string]interface{}{"name": req.Name, "modelfile": req.Modelfile}
 	var ollamaResp struct {
 		Status string `json:"status"`
@@ -101,10 +101,10 @@ func (s *OllamaService) Create(req *proto.CreateRequest) (*proto.CreateResponse,
 	if err != nil {
 		return nil, err
 	}
-	return &proto.CreateResponse{Status: ollamaResp.Status}, nil
+	return &workerpb.CreateResponse{Status: ollamaResp.Status}, nil
 }
 
-func (s *OllamaService) Delete(req *proto.DeleteRequest) (*proto.DeleteResponse, error) {
+func (s *OllamaService) Delete(req *workerpb.DeleteRequest) (*workerpb.DeleteResponse, error) {
 	ollamaReq := map[string]interface{}{"model": req.Model}
 	var ollamaResp struct {
 		Status string `json:"status"`
@@ -113,5 +113,5 @@ func (s *OllamaService) Delete(req *proto.DeleteRequest) (*proto.DeleteResponse,
 	if err != nil {
 		return nil, err
 	}
-	return &proto.DeleteResponse{Status: ollamaResp.Status}, nil
+	return &workerpb.DeleteResponse{Status: ollamaResp.Status}, nil
 }

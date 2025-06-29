@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package proto;
+package worker;
 
-option go_package = "github.com/Brotiger/gpu-4-ai-worker/proto";
+option go_package = "github.com/Brotiger/gpu-4-ai-worker/proto;workerpb";
 
 service Worker {
   rpc Generate (GenerateRequest) returns (GenerateResponse);
